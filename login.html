@@ -9,12 +9,6 @@
     <link rel="stylesheet" href="./assets/lib/layui/css/layui.css" />
     <!-- 引入自己写的css样式 -->
     <link rel="stylesheet" href="./assets/css/login.css" />
-    <!-- 引入第三方的layui中的js文件 -->
-    <script src="./assets/lib/layui/layui.all.js"></script>
-    <!-- 引入jQuery文件 -->
-    <script src="./assets/lib/jquery.js"></script>
-    <!-- 引入我们自己写的js文件 -->
-    <script src="./assets/js/login.js"></script>
   </head>
   <body>
     <!-- 页面中的logo -->
@@ -89,7 +83,7 @@
           <i class="layui-icon layui-icon-username"></i>
           <input
             type="text"
-            name="title"
+            name="username"
             required
             lay-verify="required|username"
             placeholder="请输入标题"
@@ -108,7 +102,7 @@
             lay-verify="required|pass"
             placeholder="请输入密码"
             autocomplete="off"
-            class="layui-input indent pass-first"
+            class="layui-input indent pass"
           />
         </div>
 
@@ -117,12 +111,11 @@
           <i class="layui-icon layui-icon-password"></i>
           <input
             type="password"
-            name="password"
             required
-            lay-verify="required|repass"
+            lay-verify="required|pass|repass"
             placeholder="请输入密码"
             autocomplete="off"
-            class="layui-input indent pass-second"
+            class="layui-input indent repass"
           />
         </div>
 
@@ -143,5 +136,12 @@
         </div>
       </form>
     </div>
+
+    <!-- 引入第三方的layui中的js文件 -->
+    <script src="./assets/lib/layui/layui.all.js"></script>
+    <!-- 引入jQuery文件 -->
+    <script src="./assets/lib/jquery.js"></script>
+    <!-- 引入我们自己写的js文件 -->
+    <script src="./assets/js/login.js"></script>
   </body>
 </html>
