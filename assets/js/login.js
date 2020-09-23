@@ -75,3 +75,35 @@ $(".registered .myForm").on("submit", function (e) {
     },
   });
 });
+
+// 4. 实现登陆功能
+// 4.1 给form标签注册submit事件
+$(".login .myForm").on("submit", function (e) {
+  // 4.2 阻止默认提交行为
+  e.preventDefault();
+  // 4.3 发送ajax请求
+  $.ajax({
+    type: "post",
+    url: "http://ajax.frontend.itheima.net/api/login",
+    // serialize序列化数据 将form表单内的所有具有name属性的input select textarea 等的数据一并获取 并拼接成'key=value&key=value'
+    // 4.4 获取里面的数据 username password
+    data: $(".login .myForm").serialize(),
+    success: function (res) {
+      layer.open({
+        title: "温馨提示",
+        content: res.message,
+        time: 1000,
+      });
+      if (res.status == 0) {
+        // 还应该将服务器端响应回来的token存储到本地存储当中
+        window.localStorage.setItem("token", res.token);
+        // 如果登录成功则要跳转到主页index.html
+        location.href = "./index.html";
+      }
+    },
+  });
+});
+
+// 能够知道如何使用from.verify()自定义验证规则
+// 能够知道如何使用layer.msg()提示消息
+// 能够知道jQuery中ajaxPrefilter函数的作用
