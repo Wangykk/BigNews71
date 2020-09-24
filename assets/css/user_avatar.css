@@ -1,0 +1,9 @@
+body {
+  background-color: #eee;
+}
+.card-body {
+  margin: 16px;
+}
+.myForm {
+  width: 500px;
+}

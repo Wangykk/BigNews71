@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <title>layout 后台大布局 - Layui</title>
+    <title>大事件主页</title>
     <link rel="stylesheet" href="./assets/lib/layui/css/layui.css" />
     <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
@@ -31,11 +31,11 @@
             <dl class="layui-nav-child">
               <dd><a href="">基本资料</a></dd>
               <dd><a href="">更换头像</a></dd>
-              <dd><a href="">充值密码</a></dd>
+              <dd><a href="">重置密码</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item">
-            <a href=""><i class="layui-icon layui-icon-logout"></i> 退出</a>
+            <a href="javascript:;" class="turn-off"><i class="layui-icon layui-icon-logout"></i> 退出</a>
           </li>
         </ul>
       </div>
@@ -54,27 +54,27 @@
           </div>
           <ul class="layui-nav layui-nav-tree" lay-filter="test">
             <li class="layui-nav-item layui-nav-itemed layui-this">
-              <a class="" href="javascript:;"
+              <a class="" href="./home/dashboard.html" target="main_iframe"
                 ><i class="layui-icon layui-icon-home"></i>首页</a
               >
             </li>
             <li class="layui-nav-item layui-nav-itemed">
-              <a class="" href="javascript:;"
+              <a class="" href="javascript:;
                 ><i class="layui-icon layui-icon-list"></i>文章管理</a
               >
               <dl class="layui-nav-child">
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./assets/article/article_category.html"target="main_iframe"
                     ><i class="layui-icon layui-icon-app"></i>文章类别</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./assets/article/article_list.html"target="main_iframe"
                     ><i class="layui-icon layui-icon-app"></i>文章列表</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./assets/article/article_release.html"target="main_iframe"
                     ><i class="layui-icon layui-icon-app"></i>发表文章</a
                   >
                 </dd>
@@ -87,17 +87,17 @@
               >
               <dl class="layui-nav-child">
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./assets/user/user_avatar.html"target="main_iframe"
                     ><i class="layui-icon layui-icon-app"></i>基本资料</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./assets/user/user_info.html"target="main_iframe"
                     ><i class="layui-icon layui-icon-app"></i>更换头像</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./assets/user/user_reset.html"target="main_iframe"
                     ><i class="layui-icon layui-icon-app"></i>重置密码</a
                   >
                 </dd>
@@ -109,23 +109,24 @@
 
       <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px">内容主体区域</div>
+        <!-- <div style="padding: 15px">内容主体区域</div> -->
+        <iframe
+          name="main_iframe"
+          src="./home/dashboard.html"
+          width="100%"
+          height="100%"
+          frameborder="0"
+        ></iframe>
       </div>
 
       <div class="layui-footer">
         <!-- 底部固定区域 -->
-        © hellowyk.com - 底部固定区域
+        © hellowyk.com - Wangyk
       </div>
     </div>
     <script src="./assets/lib/jquery.js"></script>
-    <script src="./assets/js/utils.js"></script>
     <script src="./assets/lib/layui/layui.all.js"></script>
+    <script src="./assets/js/utils.js"></script>
     <script src="./assets/js/index.js"></script>
-    <script>
-      //JavaScript代码区域
-      layui.use("element", function () {
-        var element = layui.element;
-      });
-    </script>
   </body>
 </html>
