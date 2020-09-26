@@ -99,6 +99,51 @@
         </div>
       </form>
     </script>
+    <!-- 编辑弹出层模板 -->
+    <script type="text/html" id="edit">
+      <form class="layui-form myForm editForm" action="" lay-filter="editForm">
+        <input type="hidden" name="Id" />
+        <div class="layui-form-item">
+          <label class="layui-form-label">分类名称</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="name"
+              required
+              lay-verify="required|username"
+              placeholder="请输入分类名称"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">分类别名</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="alias"
+              required
+              lay-verify="required|username"
+              placeholder="请输入分类别名"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-input-block">
+          <button
+            class="layui-btn 
+          update"
+            lay-submit
+            lay-filter="formDemo"
+          >
+            更 新
+          </button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+      </form>
+    </script>
     <script src="../lib/jquery.js"></script>
     <script src="../lib/layui/layui.all.js"></script>
     <script src="../js/utils.js"></script>

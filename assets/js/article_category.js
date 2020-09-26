@@ -85,4 +85,49 @@ $(function () {
       });
     });
   });
+
+  // 编辑文章的分类
+  $("tbody").on("click", ".btn-edit", function () {
+    // 获取当前按钮的id
+    var categoryId = $(this).data("id");
+    // 发送ajax请求
+    $.ajax({
+      url: "/my/article/cates/" + categoryId,
+      success: function (res) {
+        if (res.status == 0) {
+          // 弹出模态框
+          window.editIndex = layer.open({
+            type: 1,
+            title: " 更新文章分类",
+            content: $("#edit").html(),
+            area: "520px",
+          });
+
+          // 给表单赋值
+          // var form = layui.form;
+          // 在使用layui提供的这个方法渲染表单数据的时候 要求表单中的name属性必须和第二个参数对象中的属性名保持一致
+          layui.form.val("editForm", res.data);
+        }
+      },
+    });
+  });
+
+  // 更新文章分类数据
+  // 使用委托的方式给弹出层的确定按钮注册事件
+  $("body").on("submit", ".editForm", function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "post",
+      url: "/my/article/updatecate",
+      data: $(this).serialize(),
+      success: function (res) {
+        // 更新之后关闭弹出层
+        if (res.status == 0) {
+          layer.close(window.editIndex);
+          // 重新渲染文章分类列表
+          renderTable();
+        }
+      },
+    });
+  });
 });
